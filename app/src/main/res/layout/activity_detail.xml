@@ -4,8 +4,8 @@
 
     <data>
         <variable
-            name="commentsAdapter"
-            type="com.android.gamechangesproject.adapter.CommentsAdapter" />
+            name="detailsAdapter"
+            type="com.android.insuris.adapter.DetailsAdapter" />
     </data>
 
     <LinearLayout
@@ -17,7 +17,7 @@
             android:id="@+id/recyclerView"
             android:layout_height="match_parent"
             android:layout_width="match_parent"
-            android:adapter="@{commentsAdapter}"
+            android:adapter="@{detailsAdapter}"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"

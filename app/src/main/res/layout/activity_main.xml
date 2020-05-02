@@ -4,8 +4,8 @@
 
     <data>
         <variable
-            name="issuesAdapter"
-            type="com.android.gamechangesproject.adapter.IssuesAdapter" />
+            name="moviesAdapter"
+            type="com.android.insuris.adapter.MoviesAdapter" />
     </data>
 
     <LinearLayout
@@ -17,7 +17,7 @@
             android:id="@+id/recyclerView"
             android:layout_height="match_parent"
             android:layout_width="match_parent"
-            android:adapter="@{issuesAdapter}"
+            android:adapter="@{moviesAdapter}"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable name="itemClickListener"
+            type="com.android.insuris.adapter.ItemEventListener"/>
+
+        <variable
+            name="resultResponse"
+            type="com.android.insuris.model.ResultsItem"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true">
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvEmployee"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:elevation="3dp"
+            card_view:cardCornerRadius="1dp">
+            <LinearLayout
+                android:orientation="vertical"
+                android:onClick="@{() -> itemClickListener.onClickItem(resultResponse)}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:padding="4dp"
+                    android:text="@{resultResponse.title}"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="18sp"
+                    bind:layout_constraintEnd_toEndOf="parent"
+                    bind:layout_constraintTop_toTopOf="parent"
+                    tools:text="Morris"/>
+                <TextView
+                    android:id="@+id/tvBody"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvTitle"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="4dp"
+                    android:padding="4dp"
+                    android:maxLength="140"
+                    android:text="@{resultResponse.originalLanguage}"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="16sp"
+                    bind:layout_constraintEnd_toEndOf="parent"
+                    bind:layout_constraintTop_toBottomOf="@+id/tvTitle"
+                    tools:text="morris@gmail.com"/>
+
+                <RatingBar
+                    android:id="@+id/simpleRatingBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:rating="1" />
+
+                <Button
+                    android:id="@+id/submitButton"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="#f00"
+                    android:layout_marginTop="20dp"
+                    android:padding="10dp"
+                    android:text="Submit"
+                    android:textColor="#fff"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+</layout>
